@@ -130,7 +130,7 @@ const Projects = () => {
                 {/* Project Image */}
                 <div className="relative overflow-hidden h-48">
                   <img
-                    src={project.image}
+                    src={project.image.startsWith('http') ? project.image : process.env.PUBLIC_URL + project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />

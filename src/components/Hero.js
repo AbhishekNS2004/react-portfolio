@@ -122,7 +122,7 @@ const Hero = () => {
                 className="relative z-10 w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary-500/30 shadow-2xl"
               >
                 <img
-                  src="/image.png"
+                  src={process.env.PUBLIC_URL + '/image.png'}
                   alt="Abhishek - Professional Developer"
                   className="w-full h-full object-cover"
                 />
