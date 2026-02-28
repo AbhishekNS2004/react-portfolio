@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { User, MapPin, Mail, Phone } from 'lucide-react';
+import { User, MapPin, Mail, Phone, FileText } from 'lucide-react';
 
 const About = () => {
   const personalInfo = [
@@ -126,21 +126,34 @@ const About = () => {
               </p>
             </div>
 
-            {/* Download Resume Button */}
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn-primary flex items-center justify-center space-x-2 w-full sm:w-auto"
-              onClick={() => {
-                const link = document.createElement('a');
-                link.href = '/ressume.pdf';
-                link.download = 'resume.pdf';
-                link.click();
-              }}
-            >
-              <User size={20} />
-              <span>Download Full Resume</span>
-            </motion.button>
+            {/* Resume Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-primary flex items-center justify-center space-x-2 w-full sm:w-auto"
+                onClick={() => {
+                  const link = document.createElement('a');
+                  link.href = process.env.PUBLIC_URL + '/final_resume.pdf';
+                  link.download = 'resume.pdf';
+                  link.click();
+                }}
+              >
+                <User size={20} />
+                <span>Download Full Resume</span>
+              </motion.button>
+              <motion.a
+                href={process.env.PUBLIC_URL + '/final_resume.pdf'}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-secondary flex items-center justify-center space-x-2 w-full sm:w-auto"
+              >
+                <FileText size={20} />
+                <span>View Resume</span>
+              </motion.a>
+            </div>
           </motion.div>
         </div>
       </div>

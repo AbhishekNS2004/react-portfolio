@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Download, ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
+import { Download, ArrowDown, Github, Linkedin, Mail, FileText } from 'lucide-react';
 
 const Hero = () => {
   const socialLinks = [
@@ -35,9 +35,24 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.6 }}
                 className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
               >
-                <span className="gradient-text">Abhishek</span>
+                <motion.span
+                  className="gradient-text inline-block"
+                  animate={{ backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'] }}
+                  transition={{ duration: 5, repeat: Infinity, ease: "linear" }}
+                  style={{ backgroundSize: '200% auto' }}
+                >
+                  Abhishek NS
+                </motion.span>
                 <br />
-                <span className="text-white">Developer</span>
+                <span className="text-white relative inline-block">
+                  Developer
+                  <motion.span
+                    className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-primary-600 to-transparent rounded-full"
+                    initial={{ scaleX: 0, originX: 0 }}
+                    animate={{ scaleX: 1 }}
+                    transition={{ duration: 1, delay: 1.2 }}
+                  />
+                </span>
               </motion.h1>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -45,7 +60,7 @@ const Hero = () => {
                 transition={{ duration: 0.6, delay: 0.8 }}
                 className="text-xl text-gray-300 max-w-2xl leading-relaxed"
               >
-                Passionate full-stack developer creating innovative digital experiences. 
+                Passionate full-stack developer and Devops engineer creating innovative digital experiences.
                 I transform ideas into elegant, user-friendly applications that make a difference.
               </motion.p>
             </div>
@@ -55,7 +70,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 1 }}
-              className="flex flex-col sm:flex-row gap-4"
+              className="flex flex-col sm:flex-row flex-wrap gap-4"
             >
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -63,7 +78,7 @@ const Hero = () => {
                 className="btn-primary flex items-center justify-center space-x-2"
                 onClick={() => {
                   const link = document.createElement('a');
-                  link.href = '/ressume.pdf';
+                  link.href = process.env.PUBLIC_URL + '/final_resume.pdf';
                   link.download = 'resume.pdf';
                   link.click();
                 }}
@@ -71,6 +86,17 @@ const Hero = () => {
                 <Download size={20} />
                 <span>Download Resume</span>
               </motion.button>
+              <motion.a
+                href={process.env.PUBLIC_URL + '/final_resume.pdf'}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="btn-secondary flex items-center justify-center space-x-2"
+              >
+                <FileText size={20} />
+                <span>View Resume</span>
+              </motion.a>
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}

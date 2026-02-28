@@ -11,8 +11,8 @@ const Skills = () => {
         { name: 'React.js', level: 90 },
         { name: 'JavaScript', level: 95 },
         { name: 'HTML & CSS', level: 90 },
-        
-        
+
+
       ]
     },
     {
@@ -22,7 +22,7 @@ const Skills = () => {
         { name: 'Node.js', level: 88 },
         { name: 'Python', level: 80 },
         { name: 'Java', level: 75 },
-        
+
       ]
     },
     {
@@ -30,9 +30,9 @@ const Skills = () => {
       title: 'Database',
       skills: [
         { name: 'MongoDB', level: 85 },
-        
+
         { name: 'MySQL', level: 75 },
-        
+
       ]
     },
     {
@@ -40,10 +40,10 @@ const Skills = () => {
       title: 'Cloud & DevOps',
       skills: [
         { name: 'AWS', level: 75 },
-        
+
         { name: 'Git & GitHub', level: 90 },
-      
-        
+
+
       ]
     },
     {
@@ -51,10 +51,10 @@ const Skills = () => {
       title: 'Design & Tools',
       skills: [
         { name: 'Figma', level: 70 },
-        
-        
+
+
         { name: 'VS Code', level: 95 },
-        
+
       ]
     }
   ];
@@ -88,7 +88,7 @@ const Skills = () => {
             My <span className="gradient-text">Skills</span>
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            I've developed expertise in various technologies and frameworks. Here's a comprehensive overview 
+            I've developed expertise in various technologies and frameworks. Here's a comprehensive overview
             of my technical skills and proficiency levels.
           </p>
         </motion.div>
@@ -104,7 +104,8 @@ const Skills = () => {
             <motion.div
               key={category.title}
               variants={itemVariants}
-              className="bg-dark-800 p-6 rounded-xl border border-dark-700 hover:border-primary-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary-500/10"
+              whileHover={{ scale: 1.02 }}
+              className="bg-dark-800 p-6 rounded-xl border border-dark-700 hover:border-primary-500/80 transition-all duration-300 hover:shadow-[0_0_20px_rgba(235,87,87,0.15)]"
             >
               <div className="flex items-center space-x-3 mb-6">
                 <div className="p-3 bg-primary-500/20 rounded-lg">
@@ -138,9 +139,9 @@ const Skills = () => {
           <div className="flex flex-wrap justify-center gap-3">
             {[
               'Agile Methodologies', 'Team Leadership', 'Problem Solving',
-              'System Design',  'API Design',
-               'Testing ', 'Code Review',
-              'Technical Documentation', 'Mentoring', 'Project Management'
+              'System Design', 'API Design',
+              'Testing ', 'Code Review',
+               'Project Management'
             ].map((skill, index) => (
               <motion.span
                 key={skill}

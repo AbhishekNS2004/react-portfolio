@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Code, Globe } from 'lucide-react';
+import { Code, Globe, Github } from 'lucide-react';
 
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('all');
@@ -15,7 +15,7 @@ const Projects = () => {
       category: 'fullstack',
       technologies: ['HTML', 'CSS', 'JavaScript', 'SQL', 'Python', 'Alchemy'],
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/AbhishekNS2004/IVF',
       featured: true
     },
     {
@@ -37,7 +37,7 @@ const Projects = () => {
       category: 'backend',
       technologies: ['Python', 'ResNet50', 'HTML'],
       liveUrl: '#',
-      githubUrl: '#',
+      githubUrl: 'https://github.com/AbhishekNS2004/Brain-tumor-detection-using-ResNet50',
       featured: false
     }
   ];
@@ -162,7 +162,22 @@ const Projects = () => {
                     ))}
                   </div>
 
-                  {/* Action Buttons removed as requested */}
+                  {/* Action Buttons */}
+                  <div className="flex flex-wrap gap-3">
+                    {project.githubUrl && project.githubUrl !== '#' && (
+                      <motion.a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-flex items-center space-x-2 px-4 py-2 bg-dark-700 hover:bg-dark-600 text-gray-300 hover:text-white rounded-lg font-medium transition-all duration-300 border border-dark-600 hover:border-primary-500/50"
+                      >
+                        <Github size={18} />
+                        <span>View on GitHub</span>
+                      </motion.a>
+                    )}
+                  </div>
                 </div>
               </motion.div>
             ))}

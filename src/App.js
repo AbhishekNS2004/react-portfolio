@@ -4,9 +4,12 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Skills from './components/Skills';
+import Certificates from './components/Certificates';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import CustomCursor from './components/CustomCursor';
+import Chatbot from './components/Chatbot';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,16 +40,19 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen bg-dark-900 text-white">
+    <div className="min-h-screen bg-dark-900 text-white cursor-none">
+      <CustomCursor />
       <Navbar />
       <main>
         <Hero />
         <About />
         <Skills />
+        <Certificates />
         <Projects />
         <Contact />
       </main>
       <Footer />
+      <Chatbot />
     </div>
   );
 }
