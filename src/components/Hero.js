@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center section-padding pt-24">
       <div className="container-custom">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-end">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -136,7 +136,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end mt-12"
           >
             <div className="relative">
               {/* Background Glow */}
@@ -148,7 +148,7 @@ const Hero = () => {
                 className="relative z-10 w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-primary-500/30 shadow-2xl"
               >
                 <img
-                  src={process.env.PUBLIC_URL + '/image.png'}
+                  src={process.env.PUBLIC_URL + '/abhiis.jpeg'}
                   alt="Abhishek - Professional Developer"
                   className="w-full h-full object-cover"
                 />

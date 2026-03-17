@@ -65,6 +65,7 @@ const Contact = () => {
       const templateParams = {
         from_name: formData.name,
         from_email: formData.email,
+        reply_to: formData.email,
         subject: formData.subject,
         message: formData.message,
         to_email: 'abhishekns142@gmail.com' // Your email address

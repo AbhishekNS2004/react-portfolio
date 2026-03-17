@@ -88,7 +88,7 @@ Update the following files with your information:
 
 ### 2. Profile Photo
 Replace the image in the `public/` folder:
-- Place your photo as `image.png` in the `public/` folder
+- Place your photo as `abhiis.jpeg` in the `public/` folder
 - Or update the image path in `src/components/Hero.js`
 
 ### 3. Resume
